@@ -7,11 +7,7 @@ Project untuk test ini menggunakan bahasa pemrograman javascript dengan framewor
 Flow wireframe:
 Sebelum saya membuat code untuk project ini, saya membuat wireframe bisa dilihat dibawah
 
-```
-    <p align="center">
-      <img src="src/concept.jpg" width="100%" title="concept">
-    </p>
-```
+![myimage-alt-tag](./src/concept.jpg)
 
 untuk hasil masih dalam pengembangan karena waktu test yang terbatas
 
