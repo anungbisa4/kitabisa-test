@@ -8,7 +8,9 @@ Flow wireframe:
 Sebelum saya membuat code untuk project ini, saya membuat wireframe bisa dilihat dibawah
 
 ```
-    ![Alt text](src/concept.jpg?raw=true "Title")
+    <p align="center">
+      <img src="src/concept.jpg" width="100%" title="concept">
+    </p>
 ```
 
 untuk hasil masih dalam pengembangan karena waktu test yang terbatas
