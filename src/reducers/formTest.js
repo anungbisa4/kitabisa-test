@@ -33,19 +33,22 @@ const result = (n1,n2,n3,operator) => {
   } else if (operator === 'multiply') {
     return n1 * n2
   } else if (operator === 'primeNumber') {
-    let array = [], i, j, primes = [];
-    const index = n3 * 100;
-    for (i = 2; i <= index; ++i) {
-          if(primes.length > n3 - 1) {
-            break;
-          } else {
-            primes.push(i);
-            for (j = i << 1; j <= index; j += i) {
-                array[j] = true;
-            }
-          }
+
+  let array = [2];
+  const index = n3 * 20;
+  for ( let i = 3; i < index; i+=2 ) {
+    console.log(array.length)
+    if(array.length > n3 - 1) {
+      break;
+    } else {
+      if ( primes(i) ) {
+        array.push(i);
+      }
     }
-    return primes.toString();
+  }
+
+  return array.toString();
+  
   } else {
     let array = [0, 1];
     const index = n3 - 1;
@@ -54,6 +57,15 @@ const result = (n1,n2,n3,operator) => {
     }
     return array.toString();
   }
+}
+
+function primes(j) {
+  for ( var i = 2; i < j; i++ ) {
+      if ( j % i === 0 ) {
+          return false;
+      }
+  }
+  return true;
 }
 
 export default FormTest;

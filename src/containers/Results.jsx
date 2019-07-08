@@ -7,7 +7,7 @@ class Results extends Component {
       <div style={{display: !this.props.resultTop ? 'none': ''}}>
         <div className='result'>
         <h3>RESULT</h3>
-          <div class="result-value">{(!this.props.resultTop)?'0': this.props.resultTop}</div>
+          <div className="result-value">{(!this.props.resultTop)?'0': this.props.resultTop}</div>
         </div>
       </div>
     )
