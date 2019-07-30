@@ -38,6 +38,7 @@
   text-align: center;
 
   .result-value {
+    overflow: scroll;
     font-size: 3rem;
   }
 }

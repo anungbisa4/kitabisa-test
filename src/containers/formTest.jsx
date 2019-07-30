@@ -20,14 +20,14 @@ handleOptionChange = (event) => {
   this.setState({
     selectedOption: event.target.value
   })
-  this.props.selectedOption(event.target.value)
+  this.props.dispatch(selectedOption(event.target.value))
 }
-firstHandleChange = (event) => { this.props.inputFirstValue(event.target.value) }
-secondHandleChange = (event) => { this.props.inputSecondValue(event.target.value) }
-thirdHandleChange = (event) => { this.props.inputThirdValue(event.target.value) }
+firstHandleChange = (event) => { this.props.dispatch(inputFirstValue(event.target.value)) }
+secondHandleChange = (event) => { this.props.dispatch(inputSecondValue(event.target.value)) }
+thirdHandleChange = (event) => { this.props.dispatch(inputThirdValue(event.target.value)) }
   render() {
     const { selectedOption } = this.state;
-    const { pressButtonTop,  firstValue, secondValue, thirdValue} = this.props;
+    const { dispatch,  firstValue, secondValue, thirdValue} = this.props;
     return(
           <ChooseButton>
           <div className="form line">
@@ -70,7 +70,7 @@ thirdHandleChange = (event) => { this.props.inputThirdValue(event.target.value) 
                   <input type="number" className="form-control" placeholder="Input value" onChange={ this.thirdHandleChange}/>
                 </div>
             </div>
-                <button type="submit" className="btn w-100 rounded" onClick={() => {pressButtonTop(firstValue,secondValue, thirdValue, selectedOption)}}>ANSWER</button>
+                <button type="submit" className="btn w-100 rounded" onClick={() => {dispatch(pressButtonTop(firstValue,secondValue, thirdValue, selectedOption))}}>ANSWER</button>
           </div>
           </ChooseButton>
     )
@@ -78,10 +78,11 @@ thirdHandleChange = (event) => { this.props.inputThirdValue(event.target.value) 
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({inputFirstValue, inputSecondValue, inputThirdValue, pressButtonTop, selectedOption}, dispatch)
+  return {dispatch}
 }
 
 function mapStateToProps (state) {
+    console.log(state)
     return {
       firstValue: state.formTest.firstValue,
       secondValue: state.formTest.secondValue,

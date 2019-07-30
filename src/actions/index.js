@@ -5,6 +5,8 @@ export const PRESS_BUTTON_TOP = 'PRESS_BUTTON_TOP';
 export const SELECTED_OPTION = 'PRESS_BUTTON_DOWN';
 
 export function inputFirstValue(payload) {
+  const symbol = Symbol('INI SIMBOL');
+  console.log(symbol)
   console.log("VALUE 1: ", payload);
   return {
     type: INPUT_FIRST_VALUE,

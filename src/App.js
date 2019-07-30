@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import FormTest from './containers/formTest';
 import Results from './containers/Results';
+import ContentResult from './containers/contentResult';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         </div>
       </div>
       </div>
+      <ContentResult/>
     </div>
   );
 }
