@@ -3,8 +3,10 @@ import { INPUT_FIRST_VALUE,INPUT_SECOND_VALUE, INPUT_THIRD_VALUE, PRESS_BUTTON_T
 const INITIAL_STATE = {firstValue: '', secondValue:'', thirdValue: '', selected: '', result: '', result2: ''};
 
 const FormTest = (state = INITIAL_STATE, action) => {
+  console.log(action)
   switch(action.type) {
     case INPUT_FIRST_VALUE:
+      console.log("reducer first value")
       return {...state, firstValue: action.payload}
     case INPUT_SECOND_VALUE:
       return {...state, secondValue: action.payload}
@@ -50,10 +52,13 @@ const result = (n1,n2,n3,operator) => {
   return array.toString();
   
   } else {
-    let array = [0, 1];
-    const index = n3 - 1;
-    for (let i = 2; i <= index; i++) {
-        array.push(array[i - 2] + array[i - 1])
+    let array = [];
+    if(n3 === 0) {
+      array.push("0 cannot find fibonacci number")
+    } else {
+      for(let i = 1; i <= n3; i++) {
+        array.push(fibRekursif(i))
+      }
     }
     return array.toString();
   }
@@ -68,5 +73,17 @@ function primes(j) {
   return true;
 }
 
+function fibRekursif(n) {
+  let result = 0;
+  if ( n === 1) {
+    return result
+  } 
+  else if ( n === 2) {
+    return result += 1
+  } else {
+    result = fibRekursif(n - 2) + fibRekursif( n - 1 )
+    return result
+  }
+}
 export default FormTest;
 
